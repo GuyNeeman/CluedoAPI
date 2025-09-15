@@ -1,21 +1,26 @@
 package ch.neeman.guy.cluedoapi;
 
+import org.springframework.stereotype.Service;
 import java.util.*;
 
+@Service
 public class Logic {
 
-    private final List<Case> cases = new ArrayList<>();
     private final Models models = new Models();
     private final Random random = new Random();
 
-    public Case getCase() {
+    public Person getPerson() {
         Person person = models.getPerson().get(random.nextInt(models.getPerson().size()));
+        return person;
+    }
+
+    public Waffe getWeapon() {
         Waffe weapon = models.getWaffe().get(random.nextInt(models.getWaffe().size()));
+        return weapon;
+    }
+
+    public Raum getRoom() {
         Raum room = models.getRaum().get(random.nextInt(models.getRaum().size()));
-
-        Case c = new Case(person.getName(), weapon.getName(), room.getName());
-        cases.add(c);
-
-        return c;
+        return room;
     }
 }
