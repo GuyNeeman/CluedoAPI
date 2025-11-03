@@ -4,7 +4,7 @@ import org.springframework.stereotype.Service;
 import java.util.*;
 
 @Service
-public class Logic {
+public class LogicOld {
 
     private final Models models = new Models();
     private final Random random = new Random();

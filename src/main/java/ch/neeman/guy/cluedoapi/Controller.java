@@ -9,11 +9,9 @@ import java.util.List;
 public class Controller {
 
     private final Models model;
-    private final Logic logic;
 
-    public Controller(Models model, Logic logic) {
+    public Controller(Models model) {
         this.model = model;
-        this.logic = logic;
     }
 
     @GetMapping("/person")
@@ -30,21 +28,5 @@ public class Controller {
     public List<Waffe> alleWaffe() {
         return model.getWaffe();
     }
-
-    @PostMapping("/killer")
-    public Person getKiller() {
-        return logic.getPerson();
-    }
-
-    @PostMapping("/room")
-    public Raum getRoom() {
-        return logic.getRoom();
-    }
-
-    @PostMapping("/weapon")
-    public Waffe getWeapon() {
-        return logic.getWeapon();
-    }
-
 
 }
